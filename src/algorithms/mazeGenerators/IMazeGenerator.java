@@ -8,7 +8,7 @@ public interface IMazeGenerator {
      */
 
     //*************need to implement the Maze class.
-    int generate(int rows,int columns);
+    Maze generate(int rows,int columns);
 
     /** The method examining the time it took to create a maze
      * @param rows -represent the row in the matrix
