@@ -13,8 +13,13 @@ public class MazeState extends AState {
     int Column;
     public MazeState(String state, int cost, AState cameFrom) {
         super(state, cost, cameFrom);
-        this.Row=Integer.parseInt(state.substring(1,2));
-        this.Column=Integer.parseInt(state.substring(3,4));
+        int start_index=1;
+        int break_index=state.indexOf(",");
+        int end_index=state.length()-1;
+        String Row=state.substring(start_index,break_index);
+        String Column=state.substring(break_index+1,end_index);
+        this.Row=Integer.parseInt(Row);
+        this.Column=Integer.parseInt(Column);
 
     }
 

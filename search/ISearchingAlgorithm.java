@@ -11,4 +11,6 @@ public interface ISearchingAlgorithm {
      */
     int getNumberofVisitedNodes();
 
+    public Solution solve(ISearchable TheProblem);
+
 }

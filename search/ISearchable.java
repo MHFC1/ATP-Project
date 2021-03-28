@@ -20,6 +20,12 @@ public interface ISearchable {
      * @return a AState that represent the end point.
      */
     AState getGoalState();
+    /** The method returns All the initial State-Not include the Goal State
+     * @return a AState that represent the end point.
+     */
+    public ArrayList<AState> getAllInitialState();
+
+
 
 
 

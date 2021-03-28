@@ -21,4 +21,7 @@ public class BreadthFirstSearch extends ASearchingAlgorithm{
     public int getNumberofVisitedNodes() {
         return 0;
     }
+    public Solution solve(ISearchable TheProblem){
+        return null;
+    }
 }

@@ -36,6 +36,7 @@ public class SearchableMaze implements ISearchable {
         int column=((MazeState)s).getColumn();
         Position p=new Position(row,column);
         Map<Position,Integer > map=maze.getPossiblePosition(p);
+
         for (Position i : map.keySet()) {
             output.add(new MazeState(i.toString(),map.get(i),s));
         }
@@ -49,8 +50,11 @@ public class SearchableMaze implements ISearchable {
      * @return a AState that represent the end point.
      */
     @Override
+    //Need to Change!!!!!!!!!!!!!!!!!!!!
     public AState getGoalState() {
-        return new MazeState(this.maze.getGoalPosition().toString(),0,null);
+        String st=this.maze.getGoalPosition().toString();
+        return new MazeState(st,0,null);
+
     }
     /**
      * The method returns the all initial State-We convert each cell in the matrix to an -AState-(Adaptation)
