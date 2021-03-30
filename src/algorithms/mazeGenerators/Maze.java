@@ -24,18 +24,26 @@ public class Maze implements IMaze {
     @Override
     public void Print() {
         for (int i=0;i<this.mazeStruct.length;i++) {
+            System.out.print("{ ");
             for (int j = 0; j < this.mazeStruct[0].length; j++) {
                 if(i == this.Start.getRowIndex() && j == this.Start.getColumnIndex()){
                     System.out.print("S ");
                 }
                 else if (i == this.Goal.getRowIndex() && j == this.Goal.getColumnIndex()){
-                    System.out.print("E");
+                    System.out.print("E ");
                 }
                 else{
-                    System.out.print(this.mazeStruct[i][j] + " ");
+                    if(this.mazeStruct[i][j] == 1 )
+                    {
+                        System.out.print("1 ");
+                    }
+                    else{
+                        System.out.print(this.mazeStruct[i][j] + " ");
+                    }
                 }
 
             }
+            System.out.print("}");
             System.out.println();
         }
     }

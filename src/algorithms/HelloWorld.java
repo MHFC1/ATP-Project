@@ -7,21 +7,16 @@ import java.util.Random;
 
 public class HelloWorld {
     public static void main(String[] args){
-//        EmptyMazeGenerator empty = new EmptyMazeGenerator();
-//        Maze a = empty.generate(3,4);
-//        a.Print();
-//        SimpleMazeGenerator simple = new SimpleMazeGenerator();
-//        Maze b = simple.generate(10,12);
-//        b.Print();
+
         testMazeGenerator(new EmptyMazeGenerator());
         testMazeGenerator(new SimpleMazeGenerator());
-
+        testMazeGenerator(new MyMazeGenerator());
     }
     private static void testMazeGenerator(IMazeGenerator mazeGenerator) {
 // prints the time it takes the algorithm to run
-    System.out.println(String.format("Maze generation time(ms): %s", mazeGenerator.measureAlgorithmTimeMillis(100/*rows*/,100/*columns*/)));
+        System.out.println(String.format("Maze generation time(ms): %s", mazeGenerator.measureAlgorithmTimeMillis(50/*rows*/,30/*columns*/)));
 // generate another maze
-        Maze maze = mazeGenerator.generate(100/*rows*/, 100/*columns*/);
+        Maze maze = mazeGenerator.generate(50/*rows*/, 30/*columns*/);
 // prints the maze
         maze.Print();
 // get the maze entrance

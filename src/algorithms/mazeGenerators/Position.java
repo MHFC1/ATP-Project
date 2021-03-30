@@ -10,11 +10,19 @@ public class Position {
     }
 
     public int getRowIndex() {
-        return row;
+        return this.row;
     }
 
     public int getColumnIndex() {
-        return column;
+        return this.column;
+    }
+
+    public void setRowIndex(int row) {
+        this.row = row;
+    }
+
+    public void setColumnIndex(int column) {
+        this.column = column;
     }
 
     @Override
