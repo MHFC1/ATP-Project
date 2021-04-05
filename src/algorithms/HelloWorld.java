@@ -1,5 +1,9 @@
 package algorithms;
 
+import algorithms.maze3D.AMaze3DGenerator;
+import algorithms.maze3D.Maze3D;
+import algorithms.maze3D.MyMaze3DGenerator;
+import algorithms.maze3D.Position3D;
 import algorithms.mazeGenerators.EmptyMazeGenerator;
 import algorithms.mazeGenerators.*;
 
@@ -7,10 +11,22 @@ import java.util.Random;
 
 public class HelloWorld {
     public static void main(String[] args){
+//    int[][][] map3d = {{{0,0,1,1,1},{1,0,0,0,1},{1,0,1,0,1},{1,0,0,0,0},{1,1,1,1,0}},
+//                    {{0,0,1,1,1},{1,0,0,0,1},{1,0,1,0,1},{1,0,0,0,0},{1,1,1,1,0}}};
+//    Position3D start = new Position3D(0,0,0);
+//    Position3D end = new Position3D(1,4,4);
+//
+//    Maze3D maze = new Maze3D(start,end,map3d);
+//    maze.Print();
+//        testMazeGenerator(new EmptyMazeGenerator());
+//        testMazeGenerator(new SimpleMazeGenerator());
+//        testMazeGenerator(new MyMazeGenerator());
+        MyMaze3DGenerator mazelol = new MyMaze3DGenerator();
+        long time = mazelol.measureAlgorithmTimeMillis(500,500,500);
+        System.out.println(time/1000);
 
-        testMazeGenerator(new EmptyMazeGenerator());
-        testMazeGenerator(new SimpleMazeGenerator());
-        testMazeGenerator(new MyMazeGenerator());
+//        Maze3D map3d = mazelol.generate(450,450,450);
+
     }
     private static void testMazeGenerator(IMazeGenerator mazeGenerator) {
 // prints the time it takes the algorithm to run

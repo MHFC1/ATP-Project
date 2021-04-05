@@ -25,16 +25,16 @@ public class MyMazeGenerator extends AMazeGenerator{
         int indicator = (int)((rows*columns)/2.2); // this variable will give us a close estimate to when the maze is close to the end where things get complicated
         stack.push(new Position(0,0));
         while (!stack.empty()) {
-            Position next = stack.pop();
-            if (validNextCell(next)) {
-                maze[next.getRowIndex()][next.getColumnIndex()] = 0;
+            Position currentCell = stack.pop();
+            if (validNextCell(currentCell)) {
+                maze[currentCell.getRowIndex()][currentCell.getColumnIndex()] = 0;
                 indicatorFinder++;
                 if(indicatorFinder == indicator ){
-                    x = next.getRowIndex(); // x will represent the row index of the end of the maze
-                    y = next.getColumnIndex(); // y will represent the col index of the end of the maze
+                    x = currentCell.getRowIndex(); // x will represent the row index of the end of the maze
+                    y = currentCell.getColumnIndex(); // y will represent the col index of the end of the maze
                     indicator = 0;
                 }
-                ArrayList<Position> neighbors = locateNeighbors(next);
+                ArrayList<Position> neighbors = locateNeighbors(currentCell);
                 randomlyAddCellsToTheStack(neighbors);
             }
 
@@ -103,10 +103,12 @@ public class MyMazeGenerator extends AMazeGenerator{
     }
 
     private Boolean validCell(int row, int col) { //check if the cell is a valid cell inside the maze.
-        return row >= 0 && col >= 0 && row < this.maze.length && col < this.maze[0].length; // need to switch the arg and the sentence himself dont touch above.
+        if(row >= 0 && col >= 0 && row < this.maze.length && col < this.maze[0].length){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
-
-
-
 
 }
